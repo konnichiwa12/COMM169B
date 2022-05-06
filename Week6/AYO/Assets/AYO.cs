@@ -9,28 +9,32 @@ public class AYO : MonoBehaviour
     void Start()
     {
         shrink = 0;
+        Physics.gravity = new Vector3(0, -0.4F, 0);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.localScale.x > 2)
+        if (transform.localScale.y > 2)
         {
             shrink = 1;
         }
-        else if (transform.localScale.x < 1)
+        else if (transform.localScale.y < 1)
         {
             shrink = 0;
         }
 
         if (shrink == 1)
         {
-            transform.localScale -= new Vector3(0.03f, 0.03f, 0.03f);
+            transform.localScale -= new Vector3(0f, 0.005f, 0f);
         }
         else
         {
-            transform.localScale += new Vector3(0.03f, 0.03f, 0.03f);
+            transform.localScale += new Vector3(0f, 1f, 0f);
         }
+
+
+
     }
 }
